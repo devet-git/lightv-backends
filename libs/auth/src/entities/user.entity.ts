@@ -4,10 +4,20 @@ import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 export class User {
   @PrimaryGeneratedColumn()
   id: number;
+
   @Column({ unique: true })
   username: string;
+
   @Column({ nullable: true })
   email: string;
-  @Column()
+
+  @Column({ nullable: true })
   password: string;
+
+  @Column({
+    type: 'enum',
+    enum: ['google', 'facebook'],
+    nullable: true,
+  })
+  social_profile: 'google' | 'facebook';
 }
