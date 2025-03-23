@@ -10,6 +10,15 @@
 	"monorepo": true,
 	"root": "apps/lightv-core",
 	"projects": {
+		"database": {
+			"type": "library",
+			"root": "libs/database",
+			"entryFile": "index",
+			"sourceRoot": "libs/database/src",
+			"compilerOptions": {
+				"tsConfigPath": "libs/database/tsconfig.lib.json"
+			}
+		},
 		"lightv-backends": {
 			"type": "application",
 			"root": "apps/lightv-backends",
