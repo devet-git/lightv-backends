@@ -21,6 +21,7 @@ import { DataSource } from 'typeorm';
         password: configService.get<string>('POSTGRES_PASSWORD'),
         database: configService.get<string>('POSTGRES_DB'),
         schema: 'public',
+        autoLoadEntities: true,
         synchronize: true,
       }),
     }),

@@ -5,11 +5,26 @@
 	"compilerOptions": {
 		"deleteOutDir": true,
 		"webpack": true,
-		"tsConfigPath": "apps/lightv-core/tsconfig.app.json"
+		"tsConfigPath": "apps/lightv-core/tsconfig.app.json",
+		"builder": {
+			"type": "tsc",
+			"options": {
+				"eslint": false
+			}
+		}
 	},
 	"monorepo": true,
 	"root": "apps/lightv-core",
 	"projects": {
+		"auth": {
+			"type": "library",
+			"root": "libs/auth",
+			"entryFile": "index",
+			"sourceRoot": "libs/auth/src",
+			"compilerOptions": {
+				"tsConfigPath": "libs/auth/tsconfig.lib.json"
+			}
+		},
 		"database": {
 			"type": "library",
 			"root": "libs/database",
