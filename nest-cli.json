@@ -1,11 +1,11 @@
 {
 	"$schema": "https://json.schemastore.org/nest-cli",
 	"collection": "@nestjs/schematics",
-	"sourceRoot": "apps/lightv-core/src",
+	"sourceRoot": "apps/lightv-study/src",
 	"compilerOptions": {
 		"deleteOutDir": true,
 		"webpack": true,
-		"tsConfigPath": "apps/lightv-core/tsconfig.app.json",
+		"tsConfigPath": "apps/lightv-study/tsconfig.app.json",
 		"builder": {
 			"type": "tsc",
 			"options": {
@@ -14,7 +14,7 @@
 		}
 	},
 	"monorepo": true,
-	"root": "apps/lightv-core",
+	"root": "apps/lightv-study",
 	"projects": {
 		"auth": {
 			"type": "library",

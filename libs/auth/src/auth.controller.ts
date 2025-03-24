@@ -1,7 +1,10 @@
 import { AuthService } from './auth.service';
 import {
+  BadRequestException,
+  Body,
   Controller,
   Get,
+  NotFoundException,
   Post,
   Request,
   Res,
@@ -10,6 +13,7 @@ import {
 } from '@nestjs/common';
 import { LocalAuthGuard } from './guards/local.guard';
 import { GoogleOAuthGuard } from './guards/google.guard';
+import { ApiBody } from '@nestjs/swagger';
 
 @Controller('auth')
 export class AuthController {
@@ -22,8 +26,10 @@ export class AuthController {
   }
 
   @Post('signup')
-  async signupWithUsername(@Request() req: any) {
-    const { username, password, email } = req.body;
+  async signupWithUsername(@Body() body: any) {
+    if (!body) throw new BadRequestException('No body provided');
+
+    const { username, password, email } = body;
     const status = await this.authService.signupWithUsername(
       username,
       password,
