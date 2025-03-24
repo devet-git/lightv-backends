@@ -1,6 +1,7 @@
 import { NestFactory } from '@nestjs/core';
 import { LightvStudyModule } from './lightv-study.module';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
+import { ValidationPipe } from '@nestjs/common';
 
 async function bootstrap() {
   const app = await NestFactory.create(LightvStudyModule);
@@ -12,6 +13,8 @@ async function bootstrap() {
     .build();
   const documentFactory = () => SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, documentFactory);
+
+  app.useGlobalPipes(new ValidationPipe());
 
   await app.listen(process.env.port ?? 3001);
 }

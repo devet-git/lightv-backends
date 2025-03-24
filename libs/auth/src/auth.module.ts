@@ -9,6 +9,8 @@ import { DatabaseModule } from '@database/database';
 import { LocalStrategy } from './strategies/local.strategy';
 import { GoogleStrategy } from './strategies/google.strategy';
 import { PassportModule } from '@nestjs/passport';
+import { UserController } from './controllers/user.controller';
+import { UserService } from './services/user.service';
 
 @Module({
   imports: [
@@ -20,8 +22,14 @@ import { PassportModule } from '@nestjs/passport';
       signOptions: { expiresIn: '1h' },
     }),
   ],
-  providers: [AuthService, LocalStrategy, JwtStrategy, GoogleStrategy],
-  exports: [AuthService, JwtModule],
-  controllers: [AuthController],
+  providers: [
+    AuthService,
+    UserService,
+    LocalStrategy,
+    JwtStrategy,
+    GoogleStrategy,
+  ],
+  exports: [AuthService, JwtModule, UserService],
+  controllers: [AuthController, UserController],
 })
 export class AuthModule {}
