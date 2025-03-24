@@ -1,74 +1,65 @@
 {
-  "$schema": "https://json.schemastore.org/nest-cli",
-  "collection": "@nestjs/schematics",
-  "sourceRoot": "apps/lightv-study/src",
-  "compilerOptions": {
-    "deleteOutDir": true,
-    "webpack": true,
-    "tsConfigPath": "apps/lightv-study/tsconfig.app.json",
-    "builder": {
-      "type": "tsc",
-      "options": {
-        "eslint": false
-      }
-    }
-  },
-  "monorepo": true,
-  "root": "apps/lightv-study",
-  "projects": {
-    "auth": {
-      "type": "library",
-      "root": "libs/auth",
-      "entryFile": "index",
-      "sourceRoot": "libs/auth/src",
-      "compilerOptions": {
-        "tsConfigPath": "libs/auth/tsconfig.lib.json"
-      }
-    },
-    "database": {
-      "type": "library",
-      "root": "libs/database",
-      "entryFile": "index",
-      "sourceRoot": "libs/database/src",
-      "compilerOptions": {
-        "tsConfigPath": "libs/database/tsconfig.lib.json"
-      }
-    },
-    "lightv-backends": {
-      "type": "application",
-      "root": "apps/lightv-backends",
-      "entryFile": "main",
-      "sourceRoot": "apps/lightv-backends/src",
-      "compilerOptions": {
-        "tsConfigPath": "apps/lightv-backends/tsconfig.app.json"
-      }
-    },
-    "lightv-core": {
-      "type": "application",
-      "root": "apps/lightv-core",
-      "entryFile": "main",
-      "sourceRoot": "apps/lightv-core/src",
-      "compilerOptions": {
-        "tsConfigPath": "apps/lightv-core/tsconfig.app.json"
-      }
-    },
-    "lightv-study": {
-      "type": "application",
-      "root": "apps/lightv-study",
-      "entryFile": "main",
-      "sourceRoot": "apps/lightv-study/src",
-      "compilerOptions": {
-        "tsConfigPath": "apps/lightv-study/tsconfig.app.json"
-      }
-    },
-    "shared": {
-      "type": "library",
-      "root": "libs/shared",
-      "entryFile": "index",
-      "sourceRoot": "libs/shared/src",
-      "compilerOptions": {
-        "tsConfigPath": "libs/shared/tsconfig.lib.json"
-      }
-    }
-  }
+	"$schema": "https://json.schemastore.org/nest-cli",
+	"collection": "@nestjs/schematics",
+	"sourceRoot": "apps/lightv-study/src",
+	"compilerOptions": {
+		"deleteOutDir": true,
+		"webpack": true,
+		"tsConfigPath": "apps/lightv-study/tsconfig.app.json",
+		"builder": {
+			"type": "tsc",
+			"options": {
+				"eslint": false
+			}
+		}
+	},
+	"monorepo": true,
+	"root": "apps/lightv-study",
+	"projects": {
+		"auth": {
+			"type": "library",
+			"root": "libs/auth",
+			"entryFile": "index",
+			"sourceRoot": "libs/auth/src",
+			"compilerOptions": {
+				"tsConfigPath": "libs/auth/tsconfig.lib.json"
+			}
+		},
+		"database": {
+			"type": "library",
+			"root": "libs/database",
+			"entryFile": "index",
+			"sourceRoot": "libs/database/src",
+			"compilerOptions": {
+				"tsConfigPath": "libs/database/tsconfig.lib.json"
+			}
+		},
+		"lightv-core": {
+			"type": "application",
+			"root": "apps/lightv-core",
+			"entryFile": "main",
+			"sourceRoot": "apps/lightv-core/src",
+			"compilerOptions": {
+				"tsConfigPath": "apps/lightv-core/tsconfig.app.json"
+			}
+		},
+		"lightv-study": {
+			"type": "application",
+			"root": "apps/lightv-study",
+			"entryFile": "main",
+			"sourceRoot": "apps/lightv-study/src",
+			"compilerOptions": {
+				"tsConfigPath": "apps/lightv-study/tsconfig.app.json"
+			}
+		},
+		"shared": {
+			"type": "library",
+			"root": "libs/shared",
+			"entryFile": "index",
+			"sourceRoot": "libs/shared/src",
+			"compilerOptions": {
+				"tsConfigPath": "libs/shared/tsconfig.lib.json"
+			}
+		}
+	}
 }
