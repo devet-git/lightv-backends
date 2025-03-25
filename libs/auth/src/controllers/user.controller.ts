@@ -6,24 +6,30 @@ import {
   Param,
   Post,
   Put,
+  UseGuards,
 } from '@nestjs/common';
 import { UserService } from '../services/user.service';
 import { CreateUserDto } from '../dtos/create-user.dto';
 import {
+  ApiBearerAuth,
   ApiBody,
+  ApiCookieAuth,
   ApiOperation,
   ApiParam,
   ApiResponse,
   ApiTags,
 } from '@nestjs/swagger';
 import { UpdateUserDto, UpdateUserSwaggerDto } from '../dtos/update-user.dto';
+import { JwtAuthGuard } from '../guards/jwt.guard';
 
 @ApiTags('Users')
 @Controller('users')
+@UseGuards(JwtAuthGuard)
 export class UserController {
   constructor(private userService: UserService) {}
 
   @Get()
+  @ApiCookieAuth()
   async getAllUsers() {
     return await this.userService.getAllUsers();
   }

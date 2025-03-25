@@ -43,9 +43,8 @@ export class TransformResponseInterceptor<T> implements NestInterceptor {
         executionTime: `${Date.now() - startTime}ms`,
         success: true,
         statusCode: statusCodeMapped[method],
-        message: messageMapped[method],
-        httpUrl: url,
-
+        message: 'Successfully',
+        path: url,
         data,
       })),
     );

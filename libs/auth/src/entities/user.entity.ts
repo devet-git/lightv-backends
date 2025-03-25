@@ -21,5 +21,5 @@ export class User {
     enum: ['google', 'facebook'],
     nullable: true,
   })
-  social_profile: 'google' | 'facebook';
+  socialProfileProvider: 'google' | 'facebook';
 }
